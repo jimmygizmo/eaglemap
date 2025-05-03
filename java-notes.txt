@@ -1,0 +1,47 @@
+
+At root of project
+mkdir .jdk
+
+Download Java17 JDK
+
+File:
+jdk-17.0.15_windows-x64_bin.zip
+
+Place this file in the .jdk directory.
+Unzip the file. I did it on the command line in WSL with:
+
+unzip jdk-17.0.15_windows-x64_bin.zip
+
+You will then have your JDK located at:
+/.jdk/jdk-17.0.15/
+
+This is for development and for running Java code locally, in the IDE or in a local
+shell (terminal) and it is to assist the IDE (Intellij Ultimate in my case) for purposes
+of static analysis, code compleation, real-time assistance and documentation and many
+other features.
+
+-------------------------------------------------------------------------------------
+
+TODO: These instructions are only approximate. The actual flow, location and names of
+ these things are slightly different. Update later using the actual IDE:
+ It's all under project structure and you just locate the first setting and the rest populates.
+
+INTELLIJ ULTIMATE - CONFIGURE SDK/JDK
+
+Open your project in IntelliJ Ultimate.
+
+Go to File > Project Structure (Ctrl+Alt+Shift+S).
+
+Under Platform Settings > SDKs, select to add a new JDK in the pulldown.
+
+Choose the path: your-project/.jdk/jdk-17.0.15
+
+Under Project Settings > Project, set the Project SDK to the one you just added.
+
+IntelliJ will index and use this SDK for builds, code assistance, etc.
+
+
+-------------------------------------------------------------------------------------
+
+TODO: Add info on configuration of ENV VARS etc.
+

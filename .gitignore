@@ -1,3 +1,16 @@
+
+# For now, we are keeping the IDE preferences out of the repo. (IntelliJ Ultimate)
+.idea
+
+# The JDK is huge and we do not want it in the repo.
+.jdk
+
+# Database data. Lots of it. None of it should go into the repo.
+# .gitkeep use like this will however keep the empty directory in the repo, which is nice.
+dbvolume/*
+!dbvolume/.gitkeep
+
+
 # Compiled class file
 *.class
 
@@ -22,3 +35,79 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+
+####################################################################
+
+# This project may mix in some Python, so we have a Python v-venv via Pyenv Virtualenv
+# and can use some Python .gitignore entries. There are many in the default GitHub Python
+# .gitignore and I want to avoid any conflict with the Java ecosystem and I don't use many
+# of those Python entries, so I will just select a few here:
+
+
+
+# In case you add FastAPI, for example - Need to keep out __pycache__
+
+__pycache__/
+
+
+# For a frontend needing an assets dir (for images/video etc .. larger content) which containers will mount, this is
+# a good setup. This means depoying assets separate from your application, which is required in many contexts.
+#datavolume/*
+#!datavolume/.gitkeep
+#datavolume/media-assets/*
+#!datavolume/media-assets/.gitkeep
+
+
+# Treat this like a normal dir. No process writes here that I know of yet. Treated like source code that is mounted.
+# The .gitkeep can be removed. NOTE: Not certain yet that we will init with files here. Probably will.
+#vol-db-pg-init/*
+#!vol-db-pg-init/.gitkeep
+
+
+# vol-env contains secrets to be kept out of the repo, in files such as .env and servers.json
+# Different from /secrets. This one is mounted by the containers for local development, picking up config that way.
+#vol-env/*
+#!vol-env/.gitkeep
+
+
+#logvolume/*
+#!logvolume/.gitkeep
+
+
+# SSL:/TLS Certificates and Other Secrets
+secrets/*
+!secrets/.gitkeep
+!secrets/about-secrets.txt
+
+
+# In case we need certs for a frontend etc.
+# SSL:/TLS Certificates - Build location
+#nginx/certs/*
+#!nginx/certs/about-nginx-certs.txt
+
+
+# Idea for an env template. Likely used with Python dotenv. JS similar. Can use with Java.
+#_env-template
+
+# Pyenv - I do keep .python-version in the repo and use standardized v.e. names.
+
+#
+# In the case of a node container for a React or Next.js frontend:
+#
+# /node/
+#node/*
+#!node/about-node.txt
+#!node/node-notes.txt
+#!node/Dockerfile
+
+
+# MacOS
+.DS_Store
+
+#####################################################################
+
+# dotenv environment variables file
+.env
+.env.test
+
