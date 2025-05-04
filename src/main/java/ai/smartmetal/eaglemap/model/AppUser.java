@@ -1,11 +1,9 @@
 package ai.smartmetal.eaglemap.model;
 
-
 import jakarta.persistence.*;
 
-
 @Entity
-public class User {
+public class AppUser {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
@@ -14,4 +12,3 @@ public class User {
     // TODO: Getters and setters
 
 }
-
