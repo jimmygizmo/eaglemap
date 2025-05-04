@@ -1,6 +1,8 @@
 package ai.smartmetal.eaglemap.model;
 
+
 import jakarta.persistence.*;
+
 
 @Entity
 public class User {
@@ -9,5 +11,7 @@ public class User {
     private String name;
     private String email;
 
-    // Getters and setters
+    // TODO: Getters and setters
+
 }
+

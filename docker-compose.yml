@@ -1,8 +1,8 @@
-version: '3.8'
 
 
 volumes:
   dbvolume:
+# Later might add: "datavolume", "logvolume", or "vol-env"
 
 
 services:
@@ -11,19 +11,36 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/demo
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresdb:5432/eagledb
+      - SPRING_DATASOURCE_USERNAME=eagleuser
+      - SPRING_DATASOURCE_PASSWORD=eaglepass
     depends_on:
-      - db
+      - postgresdb
 
 
-  db:
+  postgresdb:
     image: postgres:15
     environment:
-      POSTGRES_DB: demo
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: eagledb
+      POSTGRES_USER: eagleuser
+      POSTGRES_PASSWORD: eaglepass
+    ports:
+      - "5432:5432"
     volumes:
       - dbvolume:/var/lib/postgresql/data
+
+
+# ########    NOTES:
+
+
+# TODO: Consider an alternate formate for ENV vars. It *IS* possible to have issues with env vars from the format used
+# in compose. I have seen quotes become part of the value, depending on the format. I'm still looking for my notes on
+# that issue. It will help in choosing the best format. Also, the tool use use to read env vars will play a role.
+# Docker has a phase which picks these up and then sets ENV inside the container and entrypoint shell. AND then you
+# app libraries have their phase to read those ENV vars. If you have issues these are just 2 of the place you must
+# consider then troubleshooting.
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/eaglemap
+#      SPRING_DATASOURCE_USERNAME: eagleuser
+#      SPRING_DATASOURCE_PASSWORD: eaglepass
 

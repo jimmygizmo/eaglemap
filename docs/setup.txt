@@ -1,0 +1,31 @@
+
+DEV
+
+NOTE: Other setup steps are currently in java-notes.txt. I will consolidate info later.
+
+Into my WSL dev env (Ubuntu 24.04):
+
+TODO: direnv setup, .envrc,
+  * Necessary to close and re-open terminal, NOT just reset it or re-source .bashrc etc. Actually close the window
+    and create a new terminal window.
+    You WILL get PyEnv AND DirEnv to both work nicely at the same time.
+
+You should be able to see that all your Java stuff comes from your local .jdk inside the project.
+
+----------------------------------------------------------------------------------------------------------------
+
+* CORRECT JAVA LOCATION:
+(ve.eaglemap) user@host:~/repos/eaglemap$ which java
+/home/user/repos/eaglemap/.jdk/jdk-17.0.15/bin/java
+
+* CORRECT JAVA VERSION FOR THIS PROJECT
+(ve.eaglemap) user@host:~/repos/eaglemap$ java --version
+java 17.0.15 2025-04-15 LTS
+Java(TM) SE Runtime Environment (build 17.0.15+9-LTS-241)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.15+9-LTS-241, mixed mode, sharing)
+
+* IN ANY CASE --NOT-- YOUR SYSTEM JAVA!
+
+-----------------------------------------------------------------------------------------------------------------
+
+

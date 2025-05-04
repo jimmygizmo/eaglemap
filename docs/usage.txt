@@ -1,0 +1,7 @@
+
+Navigate to:
+http://localhost:8080/users
+
+Use POST to /users with JSON:
+
+{ "name": "Alice", "email": "alice@example.com" }

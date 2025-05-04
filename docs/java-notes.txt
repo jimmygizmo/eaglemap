@@ -5,12 +5,19 @@ mkdir .jdk
 Download Java17 JDK
 
 File:
-jdk-17.0.15_windows-x64_bin.zip
+jdk-17.0.15_linux-x64_bin.tar.gz
 
 Place this file in the .jdk directory.
 Unzip the file. I did it on the command line in WSL with:
 
-unzip jdk-17.0.15_windows-x64_bin.zip
+tar -xzvf jdk-17.0.15_linux-x64_bin.tar.gz
+
+The -xzvf options for tar mean:
+
+x - Extract/expand
+z - unzip before extracting/expanding
+v - verbose; list each file
+f - from the following archive file
 
 You will then have your JDK located at:
 /.jdk/jdk-17.0.15/
@@ -19,6 +26,17 @@ This is for development and for running Java code locally, in the IDE or in a lo
 shell (terminal) and it is to assist the IDE (Intellij Ultimate in my case) for purposes
 of static analysis, code compleation, real-time assistance and documentation and many
 other features.
+
+-------------------------------------------------------------------------------------
+
+JAVA CONTAINER
+
+FROM openjdk:17-jdk-slim
+
+BUILDS: APACHE MAVEN
+Maven Wrapper  (run the Maven project without having Maven):
+mvnw is installed
+
 
 -------------------------------------------------------------------------------------
 
