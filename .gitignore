@@ -1,4 +1,11 @@
 
+
+# Build output dir
+target/
+
+# Large data file to initialize locations - See docs for where to obtain the correct file.
+src/main/resources/locations.tsv
+
 # For now, we are keeping the IDE preferences out of the repo. (IntelliJ Ultimate)
 .idea
 
