@@ -9,21 +9,25 @@ import java.util.Optional;
 
 @Service
 public class LocationService {
-    private final LocationRepository repository;
+    private final LocationRepository locationRepository;
 
     public LocationService(LocationRepository repository) {
-        this.repository = repository;
+        this.locationRepository = repository;
+    }
+
+    public Optional<Location> getLocationById(Long id) {
+        return locationRepository.findById(id);
     }
 
     public List<Location> getAllLocations() {
-        return repository.findAll();
+        return locationRepository.findAll();
     }
 
     public Optional<Location> getLocation(Long id) {
-        return repository.findById(id);
+        return locationRepository.findById(id);
     }
 
     public Location saveLocation(Location location) {
-        return repository.save(location);
+        return locationRepository.save(location);
     }
 }

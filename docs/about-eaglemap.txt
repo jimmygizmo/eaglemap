@@ -1,0 +1,67 @@
+
+TODO: Refine this info into the main README.
+
+
+ATTRIBUTIONS
+
+----------------------------------------------------------------------------------------------------------------------
+Location data in this project comes from:
+https://download.geonames.org/
+
+The EagleMap project and author/developer James Mannix follow the GeoNames Creative Commons 4.0 License for this data:
+https://creativecommons.org/licenses/by/4.0/
+
+I have not altereded GeoNames data. I import selected data files from the GeoNames collection under this license.
+I may only import certain fields when using that data in a microservice.
+I may only import portions of a list and I import only complete records of data but generally use all of a given file.
+Other than that, I do not modify the data and will document points related to that, all per the GeoNames license.
+
+EagleMap microservices will serve a portion of the GeoNames source data and may add value by adding additional data or
+converting the original data to other formats or presenting it together in a larger context with related data.
+
+This data will not be re-packaged with EagleMaps and is not stored with this project. At runtime, when EagleMaps
+is initialized and if it needs to re-initialize data, only then will it download and import GeoNames source files.
+
+Thank you GeoNames!
+
+https://www.geonames.org/
+info@geonames.org
+https://www.geonames.org/about.html
+
+Actual data downloads (GeoNames exports):
+https://download.geonames.org/export/dump/
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+Country Info source schema:
+
+00 ISO    *
+01 ISO3
+02 ISO-Numeric
+03 fips
+04 Country    *
+05 Capital
+06 Area(in sq km)
+07 Population    *
+08 Continent
+09 tld
+10 CurrencyCode
+11 CurrencyName
+12 Phone
+13 Postal
+14 Code
+15 Format
+16 Postal
+17 Code
+18 Regex
+19 Languages
+20 geonameid
+21 neighbours
+22 EquivalentFipsCode
+
+* indicates those currently used in EagleMap
+
+---------------------------------------------------------------------------------------------------------------------
+

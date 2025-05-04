@@ -1,10 +1,11 @@
 
-
 # Build output dir
 target/
 
 # Large data file to initialize locations - See docs for where to obtain the correct file.
 src/main/resources/locations.tsv
+# Similarly for countries. Not a huge files, but we don't want any such files in the repo.
+src/main/resources/countries.tsv
 
 # For now, we are keeping the IDE preferences out of the repo. (IntelliJ Ultimate)
 .idea
