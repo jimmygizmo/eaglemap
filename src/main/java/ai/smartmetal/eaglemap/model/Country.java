@@ -14,18 +14,18 @@ public class Country {
 
     private String name;
     private String code;
-    private int population;
+//    private int population;  // Removing country population for now. Issue with source data.
 
     // Constructors
     public Country() {}
 
     public Country(String name,
-                   String code,
-                   int population)
+                   String code)
+//                   int population)
     {
         this.name = name;
         this.code = code;
-        this.population = population;
+//        this.population = population;
     }
 
 
@@ -39,8 +39,8 @@ public class Country {
     public String getCode() { return code; }
     public void setCode(String code) { this.code = code; }
 
-    public int getPopulation() { return population; }
-    public void setPopulation(int population) { this.population = population; }
+//    public int getPopulation() { return population; }
+//    public void setPopulation(int population) { this.population = population; }
 }  // class Country  (Jakarta/JPA model)
 
 
